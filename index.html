@@ -374,6 +374,24 @@
   </style>
 </head>
 <body>
+  <!-- Welcome Loader -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <h1>Welcome to My Portfolio</h1>
+        <div class="loader-subtitle">Nela Banda Indu Lahari</div>
+      </div>
+      <div class="loader-animation">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+      </div>
+      <div class="loader-text">Loading amazing projects...</div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="main-content">
   <!-- Header -->
   <header class="header">
     <div class="container">
@@ -384,11 +402,13 @@
         <ul class="nav-list">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
           <li><a href="#participations" class="nav-link">Participations</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
       </nav>
              <div class="header-controls">
@@ -491,6 +511,7 @@
              • Enhanced frontend development skills with HTML, CSS, JavaScript<br>
              • Collaborated with my mentors and peers throughout this learning phase<br>
              • Gained hands-on experience with real-world development workflows</p>
+            <a class="certificate-link" href="skilldzire.pdf" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
            </div>
          </div>
          <div class="internship-item">
@@ -502,10 +523,11 @@
              <p class="company">Vault of Codes</p>
              <p class="duration">Duration: 1 months</p>
              <p class="description">• Worked on AI models and prompt engineering techniques<br>
-             •  Python Programming<br>
-             •  Prompt Engineering Techniques<br>
-             •  Real-world AI Applications<br>
+             • ✅ Python Programming<br>
+             • ✅ Prompt Engineering Techniques<br>
+             • ✅ Real-world AI Applications<br>
             </p>
+            <a class="certificate-link" href="ai prompt.pdf" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
            </div>
          </div>
        </div>
@@ -560,7 +582,7 @@
         <div class="skill-card animate-on-scroll-scale">
           <i class="fas fa-chart-pie"></i>
           <h3>Tableau</h3>
-          <p>Advanced data analytics & reporting</p>
+          <p>Data analytics & reporting</p>
         </div>
       </div>
     </div>
@@ -573,18 +595,21 @@
       <div class="projects-grid">
         <div class="project-card animate-on-scroll">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=250&fit=crop&crop=center" alt="Weather Forecast">
+            <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop&crop=center" alt="Weather Wizard">
             <div class="project-overlay">
               <div class="project-links">
                 <a href="https://github.com/Indulahari/Weather-Forecast" target="_blank" class="project-link">
                   <i class="fab fa-github"></i> View Code
                 </a>
+                <a href="https://indulahari.github.io/Weather-Forecast" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
               </div>
             </div>
           </div>
           <div class="project-content">
-            <h3>Weather Forecast App</h3>
-            <p>Developed a responsive and visually appealing weather forecast application that displays real-time weather data and a 24-hour forecast for any city input by the user. Designed with a dynamic background and clean UI to enhance user experience.</p>
+            <h3>Weather Wizard</h3>
+            <p>An intelligent weather application that fetches real-time weather data with an intuitive interface. Features dynamic backgrounds, 24-hour forecasts, and location-based weather updates with beautiful animations and responsive design.</p>
             <div class="project-tech">
               <span class="tech-tag">HTML</span>
               <span class="tech-tag">CSS</span>
@@ -596,18 +621,19 @@
 
         <div class="project-card animate-on-scroll">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&crop=center" alt="Smart Multi Calculator">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=250&fit=crop&crop=center" alt="Smart Multi Calculator">
                           <div class="project-overlay">
                 <div class="project-links">
                  <a href="https://github.com/Indulahari/Smart_Multi_Calculator" target="_blank" class="project-link">
                    <i class="fab fa-github"></i> View Code
                  </a>
+                
                 </div>
               </div>
           </div>
           <div class="project-content">
-            <h3>Smart Multi Calculator</h3>
-            <p>Developed a responsive multi-purpose calculator web app that consolidates 12+ daily-use calculators into a single platform. Features include Basic, Scientific, BMI, EMI, GST, Age, Date Difference, Currency Converter, Tip, Discount, Percentage, and Profit & Loss calculators.</p>
+            <h3>Calculator & Currency Converter</h3>
+            <p>A comprehensive financial toolkit featuring multiple calculators and real-time currency conversion. Built with modern web technologies to provide seamless user experience across all devices with intuitive design and powerful functionality.</p>
             <div class="project-tech">
               <span class="tech-tag">HTML</span>
               <span class="tech-tag">CSS</span>
@@ -617,6 +643,30 @@
           </div>
         </div>
         
+        <div class="project-card animate-on-scroll">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=250&fit=crop&crop=center" alt="Interactive Task Manager">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/Indulahari/rpsgame" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+                <a href="https://indulahari.github.io/rpsgame/" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Rock Paper Scissors Game</h3>
+            <p>An interactive gaming experience with smooth animations, score tracking, and responsive design. Features engaging UI elements and real-time game statistics for enhanced user experience.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -689,12 +739,13 @@
       <div class="participation-grid">
         <div class="participation-card animate-on-scroll-scale">
             <div class="participation-image">
-                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=300&h=200&fit=crop&crop=center" alt="Java Achievement">
+                <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=300&h=200&fit=crop&crop=center" alt="Python Workshop">
               </div>
           
           <i class="fas fa-laptop-code"></i>
           <h3>Python Workshop</h3>
           <p>Attended a 6-day Python workshop of Tech-Parenthesis to enhance programming skills and learn advanced concepts.</p>
+          <a class="certificate-link" href="python tech.jpeg" target="_blank">View Certificate <span class="arrow">→</span></a>
         </div>
         <div class="participation-card animate-on-scroll-scale">
                          <div class="participation-image">
@@ -703,6 +754,10 @@
             <i class="fas fa-robot"></i>
             <h3>AI & Power BI Workshops</h3>
             <p>Attended 1-day workshop on Microsoft ChatGPT and 2-days workshop on AI Dashboards using Power BI.</p>
+            <div class="project-links" style="justify-content:center; margin-top:10px; gap:8px;">
+              <a class="certificate-link" href="Nelabanda Indu Lahari_ChatGPT & AI in Microsoft Office (1).pdf" target="_blank">View Certificate <span class="arrow">→</span></a>
+              <a class="certificate-link" href="Nelabanda Indu Lahari_AI Dashboards using Microsoft Power BI.pdf" target="_blank">View Certificate <span class="arrow">→</span></a>
+            </div>
           </div>
         <div class="participation-card animate-on-scroll-scale">
           <div class="participation-image">
@@ -711,37 +766,64 @@
           <i class="fas fa-code"></i>
           <h3>Live Training Program</h3>
           <p>Completed 30 hours Live Training Program on "Cracking Coding" to improve problem-solving skills.</p>
+          <a class="certificate-link" href="EXCELR-98949-Nelabanda Indu Lahari.pdf" target="_blank">View Certificate <span class="arrow">→</span></a>
         </div>
                 <div class="participation-card animate-on-scroll-scale">
                           <div class="participation-image">
                  <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=300&h=200&fit=crop&crop=center" alt="National Event">
                </div>
            
+            <div class="participation-logo">
+              <i class="fas fa-award"></i>
+              <i class="fas fa-file-powerpoint"></i>
+            </div>
             <i class="fas fa-presentation"></i>
-            <h3>National Event</h3>
-            <p>Participated in National Events for Paper Presentation in KITES 2K25 showcasing research and innovation.</p>
+            <h3>National Paper Presentation</h3>
+            <p>Presented research paper at KITES 2K25 national conference, showcasing innovative solutions and technical expertise in front of academic peers and industry professionals.</p>
+            <a class="certificate-link" href="paper presentation.jpeg" target="_blank">View Certificate <span class="arrow">→</span></a>
           </div>
                  <div class="participation-card animate-on-scroll-scale">
+          <div class="participation-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop&crop=center" alt="Hackathon">
+          </div>
+          <i class="fas fa-trophy"></i>
+          <h3>Hackathon Event</h3>
+          <p>Participated in the Hackathon event in TARANG 2K25 organized by SRIT, Anantapur.</p>
+          <a class="certificate-link" href="hackthon.jpeg" target="_blank">View Certificate <span class="arrow">→</span></a>
+        </div>
+        <div class="participation-card animate-on-scroll-scale">
            <div class="participation-image">
-             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop&crop=center" alt="Hackathon">
-           </div>
-           <i class="fas fa-trophy"></i>
-           <h3>Hackathon Event</h3>
-           <p>Participated in the Hackathon event in TARANG 2K25 organized by SRIT, Anantapur.</p>
-         </div>
-         <div class="participation-card animate-on-scroll-scale">
-            <div class="participation-image">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&h=200&fit=crop&crop=center" alt="Python Workshop">
-              </div>
-          
-           <i class="fas fa-medal"></i>
-           <h3>Java Exam Achievement</h3>
-           <p>Secured First Place in Java Programming Exam at Real Point Computers, Local Institute.</p>
-         </div>
+               <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&h=200&fit=crop&crop=center" alt="Python Workshop">
+             </div>
+         
+          <i class="fas fa-medal"></i>
+          <h3>Java Exam Achievement</h3>
+          <p>Secured First Place in Java Programming Exam at Real Point Computers, Local Institute.</p>
+           <a class="certificate-link" href="javatest.jpeg" target="_blank">View Certificate <span class="arrow">→</span></a>
+        </div>
+        <div class="participation-card animate-on-scroll-scale">
+          <div class="participation-image">
+            <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=300&h=200&fit=crop&crop=center" alt="Java Programming">
+          </div>
+          <i class="fab fa-java"></i>
+          <h3>Core Java Programming</h3>
+          <p>Comprehensive Java development training covering OOP principles, design patterns, and enterprise application development.</p>
+          <a class="certificate-link" href="oracle java.jpeg" target="_blank">View Certificate <span class="arrow">→</span></a>
+        </div>
+        <div class="participation-card animate-on-scroll-scale">
+          <div class="participation-image">
+            <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=300&h=200&fit=crop&crop=center" alt="Database Management">
+          </div>
+          <i class="fas fa-database"></i>
+          <h3>Database Management & SQL</h3>
+          <p>Mastered advanced database concepts, SQL optimization, and data modeling techniques for enterprise applications.</p>
+          <a class="certificate-link" href="oracle java.jpeg" target="_blank">View Certificate <span class="arrow">→</span></a>
+        </div>
       </div>
     </div>
   </section>
 
+  
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
@@ -755,13 +837,7 @@
               <p>indulahari219@gmail.com</p>
             </div>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <div>
-              <h3>Phone</h3>
-              <p>+91 7997404128</p>
-            </div>
-          </div>
+          
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
             <div>
@@ -803,6 +879,74 @@
       </div>
     </div>
   </section>
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-content">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What technologies do you specialize in?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>I specialize in Java, Python, web development (HTML, CSS, JavaScript), database management (SQL, Oracle), and data visualization tools like Power BI and Tableau. I'm also experienced with Flask framework and API integration.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Are you available for freelance projects?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, I'm open to freelance opportunities, especially projects involving web development, data analysis, or application development. Feel free to contact me to discuss your project requirements.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What is your educational background?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>I'm currently pursuing B.Tech in Computer Science and Artificial Intelligence from St. Johns College of Engineering and Technology (2022-2026). I maintain a CGPA of 8.0+ and actively participate in various technical workshops and competitions.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How can I view your project source code?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>All my project source codes are available on my GitHub profile. You can click on the "View Code" button on any project card to access the repository, or visit my GitHub profile directly from the contact section.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What kind of internships have you completed?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>I've completed internships in Web Development at Skilldzire (8 weeks) and AI & Prompt Engineering at Vault of Codes (1 month). These experiences have strengthened my practical skills in development and AI technologies.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How can I get in touch with you?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>You can reach me via email at indulahari219@gmail.com, connect with me on LinkedIn, or use the contact form on this website. I typically respond within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -810,6 +954,7 @@
       <p>&copy; 2025 Nela Banda Indu Lahari. All rights reserved.</p>
     </div>
   </footer>
+  </div> <!-- End Main Content -->
 
      <!-- EmailJS SDK -->
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -1048,6 +1193,44 @@
 
     // Listen for scroll events
     window.addEventListener('scroll', animateOnScroll);
+
+    // Loader functionality
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader');
+      const mainContent = document.getElementById('main-content');
+      
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        mainContent.classList.add('show');
+        
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
+      }, 2000); // Show loader for 2 seconds
+    });
+
+    // FAQ Accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all FAQ items
+          faqItems.forEach(faqItem => {
+            faqItem.classList.remove('active');
+          });
+          
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>

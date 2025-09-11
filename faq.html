@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Nela Banda Indu Lahari</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* FAQ Specific Styles */
+    .faq-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .faq-hero-content {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .faq-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .faq-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    .faq-section {
+      padding: 5rem 0;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .dark-theme .faq-section {
+      background: #2a2a2a;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e9ecef;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .dark-theme .faq-item {
+      background: #2a2a2a;
+      border-color: #3a3a3a;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15),
+                  0 0 18px rgba(147, 51, 234, 0.5),
+                  0 0 36px rgba(147, 51, 234, 0.4),
+                  0 0 54px rgba(147, 51, 234, 0.3),
+                  inset 0 0 20px rgba(147, 51, 234, 0.1);
+      border: 2px solid rgba(147, 51, 234, 0.6);
+      background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(147, 51, 234, 0.05));
+    }
+
+    .dark-theme .faq-item:hover {
+      background: linear-gradient(145deg, rgba(42, 42, 42, 0.9), rgba(147, 51, 234, 0.1));
+    }
+
+    .faq-question {
+      padding: 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2c3e50;
+      transition: all 0.3s ease;
+    }
+
+    .dark-theme .faq-question {
+      color: #e0e0e0;
+    }
+
+    .faq-question:hover {
+      color: #667eea;
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      color: #667eea;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      padding: 0 2rem 2rem;
+      color: #666;
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .dark-theme .faq-answer {
+      color: #b0b0b0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 2rem;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .back-to-portfolio {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 12px 30px;
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      color: #2c3e50;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+
+    .back-to-portfolio:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .category-tab {
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid #667eea;
+      color: #667eea;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .category-tab:hover,
+    .category-tab.active {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .faq-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .category-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .faq-question {
+        padding: 1.5rem;
+        font-size: 1rem;
+      }
+      
+      .faq-answer {
+        padding: 0 1.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h2>Nela Banda Indu Lahari</h2>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="index.html#education" class="nav-link">Education</a></li>
+          <li><a href="index.html#participations" class="nav-link">Participations</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FAQ Hero Section -->
+  <section class="faq-hero">
+    <div class="container">
+      <div class="faq-hero-content">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about my skills, projects, and career journey</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-container">
+      <a href="index.html" class="back-to-portfolio">
+        <i class="fas fa-arrow-left"></i>
+        Back to Portfolio
+      </a>
+
+      <!-- Category Tabs -->
+      <div class="category-tabs">
+        <button class="category-tab active" data-category="all">All Questions</button>
+        <button class="category-tab" data-category="general">General</button>
+        <button class="category-tab" data-category="technical">Technical</button>
+        <button class="category-tab" data-category="projects">Projects</button>
+        <button class="category-tab" data-category="career">Career</button>
+      </div>
+
+      <!-- FAQ Items -->
+      <div class="faq-items">
+        <!-- General Questions -->
+        <div class="faq-item" data-category="general">
+          <div class="faq-question">
+            <span>Who is Nela Banda Indu Lahari?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            I'm a passionate Computer Science and Artificial Intelligence student at St. Johns College of Engineering and Technology. I have a strong foundation in programming, data analysis, and web development. I love creating innovative solutions and turning complex problems into simple, beautiful interfaces.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <div class="faq-question">
+            <span>What are your main interests and hobbies?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            When I'm not coding, you can find me participating in hackathons, attending workshops, or exploring new technologies to expand my skill set. I believe in continuous learning and staying updated with the latest industry trends. I also enjoy problem-solving and building applications that make a difference.
+          </div>
+        </div>
+
+        <!-- Technical Questions -->
+        <div class="faq-item" data-category="technical">
+          <div class="faq-question">
+            <span>What programming languages do you know?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            I'm proficient in Java for object-oriented programming and application development, Python for data analysis, automation, and machine learning, JavaScript for interactive web applications, and I have experience with HTML5, CSS3, SQL, Oracle, and frameworks like Flask.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="technical">
+          <div class="faq-question">
+            <span>What tools and technologies do you use for data analysis?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            I use Python for data analysis and automation, Power BI for business intelligence and data visualization, Tableau for advanced data analytics and reporting, and SQL & Oracle for database management and queries. I've also worked with AI models and prompt engineering techniques.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="technical">
+          <div class="faq-question">
+            <span>Do you have experience with AI and Machine Learning?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Yes! I've completed an AI & Prompt Engineering internship at Vault of Codes where I worked on AI models and prompt engineering techniques. I've also attended workshops on ChatGPT & AI in Microsoft Office and AI Dashboards using Power BI. My degree focuses on Computer Science and Artificial Intelligence.
+          </div>
+        </div>
+
+        <!-- Projects Questions -->
+        <div class="faq-item" data-category="projects">
+          <div class="faq-question">
+            <span>What types of projects have you worked on?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            I've developed a Weather Forecast App with real-time data and 24-hour forecasts, a Smart Multi Calculator consolidating 12+ daily-use calculators, and a Rock Paper Scissors Game with score tracking. All projects feature responsive design and modern UI/UX principles.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="projects">
+          <div class="faq-question">
+            <span>Can I see the source code of your projects?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Absolutely! All my projects are available on GitHub with complete source code. You can find the links in the Projects section of my portfolio. I believe in open-source development and sharing knowledge with the community.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="projects">
+          <div class="faq-question">
+            <span>What's your development process for new projects?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            I start with planning and requirement analysis, then create wireframes and design mockups. I follow agile development practices, write clean and maintainable code, implement responsive design principles, and thoroughly test before deployment. I also focus on user experience and modern UI design.
+          </div>
+        </div>
+
+        <!-- Career Questions -->
+        <div class="faq-item" data-category="career">
+          <div class="faq-question">
+            <span>What internships have you completed?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            I've completed a Web Development Internship at Skilldzire (8 weeks) where I developed responsive web applications and enhanced my frontend skills. I also completed an AI & Prompt Engineering Internship at Vault of Codes (1 month) focusing on AI models and prompt engineering techniques.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="career">
+          <div class="faq-question">
+            <span>What are your career goals?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            I aim to become a skilled software developer specializing in AI and data science. I want to work on innovative projects that solve real-world problems and make a positive impact. I'm particularly interested in roles that combine web development, data analysis, and artificial intelligence.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="career">
+          <div class="faq-question">
+            <span>Are you available for freelance work or collaborations?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Yes! I'm open to freelance projects, collaborations, and internship opportunities. I'm particularly interested in web development, data analysis, and AI-related projects. Feel free to contact me through the contact form on my portfolio or email me directly.
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <div class="faq-question">
+            <span>How can I get in touch with you?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            You can reach me via email at indulahari219@gmail.com, connect with me on LinkedIn, or check out my projects on GitHub. I'm also available through the contact form on my portfolio website. I'm always happy to discuss new opportunities and collaborations!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Nela Banda Indu Lahari. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.classList.add(savedTheme);
+      if (savedTheme === 'dark-theme') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      
+      if (body.classList.contains('dark-theme')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark-theme');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', '');
+      }
+    });
+
+    // FAQ functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Toggle current item
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+
+    // Category filtering
+    document.querySelectorAll('.category-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const category = tab.dataset.category;
+        
+        // Update active tab
+        document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        // Filter FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
